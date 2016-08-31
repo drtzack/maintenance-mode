@@ -22,7 +22,7 @@ class StartMaintenanceCommand extends DownCommand {
         $path = $this->laravel->storagePath().'/framework/down';
 
         $timestamp = Carbon::now()->timestamp;
-        $message = $this->argument('message');
+        $message = $this->option('message');
 
         // Add the file with our information
         File::put($path, $timestamp . '|' . $message);
